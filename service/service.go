@@ -179,11 +179,12 @@ func generateARecord() []byte {
 	randomTimeInt := rand.Int63n((time.Now().Unix()+3150000)-time.Now().Unix()) + time.Now().Unix()
 	randomTime := time.Unix(randomTimeInt, 0)
 	destNumber := 1000000 + rand.Intn(9999999-1000000)
-	data["Timestamp"] = randomTime.Format("2006-01-02 15:04:05")
-	data["MSI_SDN"] = "+" + prefs[rand.Intn(len(prefs))] + strconv.Itoa(destNumber)
-	data["Dest_number"] = res[0]
-	data["Duration"] = (time.Second * time.Duration(rand.Intn(300))).String()
-	data["Phone_model"] = models[rand.Intn(len(models))]
+
+	data["timestamp"] = randomTime.Format("2006-01-02 15:04:05")
+	data["msi_sdn"] = "+" + prefs[rand.Intn(len(prefs))] + strconv.Itoa(destNumber)
+	data["dest_number"] = res[0]
+	data["duration"] = strconv.Itoa(rand.Intn(300)) + " s"
+	data["phone_model"] = models[rand.Intn(len(models))]
 
 	for i := 0; i < 200; i++ {
 		num := rand.Int63()
