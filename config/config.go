@@ -10,9 +10,10 @@ type config struct {
 	Timer        int
 	KafkaAddress string
 	KafkaTopic   string
+	Limit        int
 }
 
-var MyConfig = config{1, "localhost:9092", "test3"}
+var MyConfig = config{1, "localhost:9092", "test3", 100000}
 
 func LoadConfigs() {
 	var localConfigs config

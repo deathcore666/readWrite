@@ -19,8 +19,8 @@ import (
 )
 
 func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.WaitGroup) {
-	//limit := 100000
-	//limitReached := make(chan interface{}, 1)
+	limit := conf.MyConfig.Limit
+	limitReached := make(chan interface{})
 	timer := time.NewTimer(time.Second * time.Duration(conf.MyConfig.Timer))
 	start := time.Now()
 	var (
@@ -38,15 +38,16 @@ func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.Wai
 	}
 
 	wgLocal.Add(1)
-	go func() {
+	go func(limitReached chan interface{}) {
 		defer wgLocal.Done()
 		for range producer.Successes() {
 			successes++
-			//if successes >= limit {
-			//	limitReached <- struct{}{}
-			//}
+			if (successes == limit) {
+				limitReached <- struct{}{}
+			}
+
 		}
-	}()
+	}(limitReached)
 
 	wgLocal.Add(1)
 	go func() {
@@ -64,6 +65,7 @@ ProducerLoop:
 		select {
 		case producer.Input() <- messageSarama:
 			enqueued++
+
 			//log.Println(messageSarama)
 
 		case <-timer.C:
@@ -71,12 +73,12 @@ ProducerLoop:
 			producer.AsyncClose() // Trigger a shutdown of the producer.
 
 			break ProducerLoop
-		//
-		//case <-limitReached:
-		//	log.Println("limit ", limit, " was reached, finishing up")
-		//	producer.AsyncClose() // Trigger a shutdown of the producer.
-		//
-		//	break ProducerLoop
+
+		case <-limitReached:
+			log.Println("limit ", limit, " was reached, finishing up")
+			producer.AsyncClose() // Trigger a shutdown of the producer.
+
+			break ProducerLoop
 
 		case <-interrupt:
 			log.Println("system interrupt detected, finishing up...")
