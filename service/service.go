@@ -19,7 +19,8 @@ import (
 )
 
 func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.WaitGroup) {
-
+	//limit := 100000
+	//limitReached := make(chan interface{}, 1)
 	timer := time.NewTimer(time.Second * time.Duration(conf.MyConfig.Timer))
 	start := time.Now()
 	var (
@@ -41,6 +42,9 @@ func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.Wai
 		defer wgLocal.Done()
 		for range producer.Successes() {
 			successes++
+			//if successes >= limit {
+			//	limitReached <- struct{}{}
+			//}
 		}
 	}()
 
@@ -67,6 +71,12 @@ ProducerLoop:
 			producer.AsyncClose() // Trigger a shutdown of the producer.
 
 			break ProducerLoop
+		//
+		//case <-limitReached:
+		//	log.Println("limit ", limit, " was reached, finishing up")
+		//	producer.AsyncClose() // Trigger a shutdown of the producer.
+		//
+		//	break ProducerLoop
 
 		case <-interrupt:
 			log.Println("system interrupt detected, finishing up...")

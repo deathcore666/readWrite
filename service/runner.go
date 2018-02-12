@@ -50,7 +50,7 @@ func createTask() func() {
 		go writeToKafka(messages, interrupt, &wg)
 
 		wg.Wait()
-		close(messages)
+
 		t := time.Now()
 		elapsed := t.Sub(start)
 		log.Println("finished writing; time elapsed: ", elapsed)
