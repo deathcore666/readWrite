@@ -18,7 +18,7 @@ import (
 	"encoding/csv"
 )
 
-func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, done chan interface{}, wg *sync.WaitGroup){
+func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.WaitGroup){
 	timer := time.NewTimer(time.Second * time.Duration(conf.MyConfig.Timer))
 	start := time.Now()
 	var (
@@ -82,16 +82,23 @@ ProducerLoop:
 		wg.Done()
 		log.Printf("kafka messages enqueued: %d; errors: %d\n", successes, errors)
 		log.Println("producer exited; time elapsed: ", elapsed)
-		done <- struct{}{}
 	}()
 
 }
 
-func readFile(reader *bufio.Reader, dataStream chan []byte) {
+func readFile(dataStream chan []byte, wg *sync.WaitGroup) {
+	file, err := os.Open("test.txt")
+	if err != nil {
+		log.Println(err)
+	}
+	defer file.Close()
+
+	reader := bufio.NewReader(file)
 	for {
 		line, _, err := reader.ReadLine()
 		if err == io.EOF {
-			break
+			file.Close()
+			readFile(dataStream, wg)
 		}
 		dataStream <- line
 	}
@@ -154,8 +161,8 @@ func generateARecord() []byte {
 	if err != nil {
 		log.Println(err)
 	}
-
 	r := csv.NewReader(strings.NewReader(string(file)))
+
 	for {
 		record, err := r.Read()
 		if err == io.EOF {
@@ -182,7 +189,7 @@ func generateARecord() []byte {
 	data["duration"] = strconv.Itoa(rand.Intn(300)) + " s"
 	data["phone_model"] = models[rand.Intn(len(models))]
 
-	for i := 0; i < 50; i++ {
+	for i := 0; i < 200; i++ {
 		num := rand.Int63()
 		data["field"+string(i)] = num
 	}
