@@ -7,6 +7,7 @@ import (
 	"os/signal"
 	"sync"
 	"log"
+	"bufio"
 )
 
 type Runner struct {
@@ -40,16 +41,35 @@ func createTask() func() {
 		log.Println("writing to Kafka...")
 
 		interrupt := make(chan os.Signal, 1)
+		done := make(chan interface{}, 1)
 		signal.Notify(interrupt, os.Interrupt)
 
 		messages := make(chan []byte)
 		var wg sync.WaitGroup
 
+		file, err := os.Open("test.txt")
+		if err != nil {
+			log.Println(err)
+		}
+		defer file.Close()
+
+		reader := bufio.NewReader(file)
+
 		wg.Add(1)
-		go readFile(messages, &wg)
-		go writeToKafka(messages, interrupt, &wg)
+		go writeToKafka(messages, interrupt, done,  &wg)
+		ReadLoop:
+		for {
+			select {
+			case <-done:
+				break ReadLoop
+
+			default:
+				readFile(reader, messages)
+			}
+		}
 
 		wg.Wait()
+		file.Close()
 		close(messages)
 		t := time.Now()
 		elapsed := t.Sub(start)
