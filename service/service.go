@@ -54,7 +54,7 @@ func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.Wai
 
 ProducerLoop:
 	for {
-		message := &sarama.ProducerMessage{Topic: conf.MyConfig.KafkaTopic, Value: sarama.StringEncoder(<-dataStream)}
+		message := &sarama.ProducerMessage{Key: sarama.StringEncoder(time.Now().UnixNano()) ,Topic: conf.MyConfig.KafkaTopic, Value: sarama.StringEncoder(<-dataStream)}
 		select {
 		case producer.Input() <- message:
 			enqueued++
