@@ -58,7 +58,7 @@ ProducerLoop:
 		messageSarama := &sarama.ProducerMessage{Topic: conf.MyConfig.KafkaTopic, Value: sarama.StringEncoder(message)}
 		select {
 		case producer.Input() <- messageSarama:
-			log.Println(message)
+
 			enqueued++
 
 		case <-timer.C:
