@@ -18,13 +18,13 @@ import (
 	"encoding/csv"
 )
 
-func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.WaitGroup){
+func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.WaitGroup) {
 	timer := time.NewTimer(time.Second * time.Duration(conf.MyConfig.Timer))
 	start := time.Now()
 	var (
 		wgLocal                     sync.WaitGroup
 		enqueued, successes, errors int
-		err							error
+		err                         error
 	)
 
 	config := sarama.NewConfig()
@@ -58,19 +58,19 @@ ProducerLoop:
 		messageSarama := &sarama.ProducerMessage{Topic: conf.MyConfig.KafkaTopic, Value: sarama.StringEncoder(message)}
 		select {
 		case producer.Input() <- messageSarama:
-
 			enqueued++
+			//log.Println(messageSarama)
 
 		case <-timer.C:
 			log.Println(strconv.Itoa(conf.MyConfig.Timer) + " second(s) timeout has passed")
 			producer.AsyncClose() // Trigger a shutdown of the producer.
-			err = ErrTimeout
+
 			break ProducerLoop
 
 		case <-interrupt:
 			log.Println("system interrupt detected, finishing up...")
 			producer.AsyncClose() // Trigger a shutdown of the producer.
-			err = ErrInterrupt
+
 			break ProducerLoop
 		}
 	}
@@ -96,15 +96,24 @@ func readFile(dataStream chan []byte, wg *sync.WaitGroup) {
 	}
 	defer file.Close()
 
-	reader := bufio.NewReader(file)
-	for {
-		line, _, err := reader.ReadLine()
-		if err == io.EOF {
-			file.Close()
-			readFile(dataStream, wg)
-		}
-		dataStream <- line
+	fileScanner := bufio.NewScanner(file)
+
+	for fileScanner.Scan() {
+		dataStream <- []byte(fileScanner.Text())
 	}
+	readFile(dataStream, wg)
+
+	//
+	//reader := bufio.NewReader(file)
+	//for {
+	//	line, _, err := reader.ReadLine()
+	//	if err == io.EOF {
+	//		file.Close()
+	//		readFile(dataStream, wg)
+	//	}
+	//	dataStream <- line
+	//	log.Println(string(line))
+	//}
 }
 
 func WriteRandomDataToFile() {
