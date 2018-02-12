@@ -19,6 +19,7 @@ import (
 )
 
 func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.WaitGroup) {
+
 	timer := time.NewTimer(time.Second * time.Duration(conf.MyConfig.Timer))
 	start := time.Now()
 	var (
@@ -94,26 +95,14 @@ func readFile(dataStream chan []byte, wg *sync.WaitGroup) {
 	if err != nil {
 		log.Println(err)
 	}
-	defer file.Close()
 
 	fileScanner := bufio.NewScanner(file)
 
 	for fileScanner.Scan() {
 		dataStream <- []byte(fileScanner.Text())
 	}
+	file.Close()
 	readFile(dataStream, wg)
-
-	//
-	//reader := bufio.NewReader(file)
-	//for {
-	//	line, _, err := reader.ReadLine()
-	//	if err == io.EOF {
-	//		file.Close()
-	//		readFile(dataStream, wg)
-	//	}
-	//	dataStream <- line
-	//	log.Println(string(line))
-	//}
 }
 
 func WriteRandomDataToFile() {
