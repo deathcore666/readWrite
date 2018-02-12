@@ -46,6 +46,8 @@ func createTask() func() {
 		var wg sync.WaitGroup
 
 		wg.Add(1)
+
+
 		go readFile(messages, &wg)
 		go writeToKafka(messages, interrupt, &wg)
 

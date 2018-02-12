@@ -1,6 +1,6 @@
 {
-  "Timer": 1,
+  "Timer": 100000,
   "KafkaAddress": "localhost:9092",
   "KafkaTopic": "sanjar",
-  "Limit": 5000
+  "Limit": 5000000
 }

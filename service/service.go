@@ -5,7 +5,6 @@ import (
 	"sync"
 	"log"
 	"os"
-	"bufio"
 	"io"
 	"encoding/json"
 	"math/rand"
@@ -16,6 +15,7 @@ import (
 	"io/ioutil"
 	"strings"
 	"encoding/csv"
+	"bufio"
 )
 
 func writeToKafka(dataStream chan []byte, interrupt chan os.Signal, wg *sync.WaitGroup) {
@@ -116,6 +116,7 @@ func readFile(dataStream chan []byte, wg *sync.WaitGroup) {
 	file.Close()
 	readFile(dataStream, wg)
 	return
+
 }
 
 func WriteRandomDataToFile() {
@@ -203,7 +204,7 @@ func generateARecord() []byte {
 	data["duration"] = strconv.Itoa(rand.Intn(300)) + " s"
 	data["phone_model"] = models[rand.Intn(len(models))]
 
-	for i := 0; i < 200; i++ {
+	for i := 0; i < 5; i++ {
 		num := rand.Int63()
 		data["field"+string(i)] = num
 	}
