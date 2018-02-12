@@ -42,12 +42,16 @@ func createTask() func() {
 		interrupt := make(chan os.Signal, 1)
 		signal.Notify(interrupt, os.Interrupt)
 
+		done := make(chan interface{}, 1)
 		messages := make(chan []byte)
 		var wg sync.WaitGroup
 
 		wg.Add(1)
-		go readFile(messages, &wg)
-		go writeToKafka(messages, interrupt, &wg)
+		go writeToKafka(messages, interrupt, done, &wg)
+
+		for {
+			go readFile(messages, &wg)
+		}
 
 		wg.Wait()
 		close(messages)
