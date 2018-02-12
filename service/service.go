@@ -115,6 +115,7 @@ func readFile(dataStream chan []byte, wg *sync.WaitGroup) {
 	}
 	file.Close()
 	readFile(dataStream, wg)
+	return
 }
 
 func WriteRandomDataToFile() {
