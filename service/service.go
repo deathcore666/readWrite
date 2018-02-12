@@ -157,9 +157,12 @@ func generateARecord() []byte {
 		"Galaxys8",
 	)
 
-	file, _ := ioutil.ReadFile("bishkekplaces.csv")
-	r := csv.NewReader(strings.NewReader(string(file)))
+	file, err := ioutil.ReadFile("bishkekplaces.csv")
+	if err != nil {
+		log.Println(err)
+	}
 
+	r := csv.NewReader(strings.NewReader(string(file)))
 	for {
 		record, err := r.Read()
 		if err == io.EOF {
