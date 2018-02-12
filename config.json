@@ -1,5 +1,5 @@
 {
-  "Timer": 3,
+  "Timer": 1,
   "KafkaAddress": "localhost:9092",
   "KafkaTopic": "sanjar"
 }

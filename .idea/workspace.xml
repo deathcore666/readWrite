@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4ea12c55-d889-4348-b3f8-bab718e24084" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/service/runner.go" afterPath="$PROJECT_DIR$/service/runner.go" />
+      <change beforePath="$PROJECT_DIR$/config.json" afterPath="$PROJECT_DIR$/config.json" />
+      <change beforePath="$PROJECT_DIR$/readWrite" afterPath="$PROJECT_DIR$/readWrite" />
       <change beforePath="$PROJECT_DIR$/service/service.go" afterPath="$PROJECT_DIR$/service/service.go" />
+      <change beforePath="$PROJECT_DIR$/test.txt" afterPath="$PROJECT_DIR$/test.txt" />
+      <change beforePath="$PROJECT_DIR$/test1.txt" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,14 +29,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45464247">
+    <splitter split-orientation="horizontal" split-proportion="0.24636766">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="runner.go" pinned="false" current-in-tab="true">
+          <file leaf-file-name="runner.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/service/runner.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                <state relative-caret-position="880">
+                  <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
                   <folding>
                     <element signature="e#17#79#0" expanded="true" />
                   </folding>
@@ -44,7 +47,7 @@
           <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
+                <state relative-caret-position="120">
                   <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
                   <folding>
                     <element signature="e#14#139#0" expanded="true" />
@@ -56,7 +59,7 @@
           <file leaf-file-name="config.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/config.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
+                <state relative-caret-position="100">
                   <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
                   <folding>
                     <element signature="e#16#63#0" expanded="true" />
@@ -65,11 +68,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
+          <file leaf-file-name="config.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="80">
-                  <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+                  <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -78,13 +81,11 @@
           <file leaf-file-name="service.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/service/service.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1385">
+                <state relative-caret-position="80">
                   <caret line="20" column="5" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="10" />
                   <folding>
                     <element signature="e#17#231#0" expanded="true" />
-                    <marker date="1518419459502" expanded="true" signature="1002:1015" ph="/.../" />
-                    <marker date="1518419459502" expanded="true" signature="1232:1455" ph="..." />
-                    <marker date="1518419459502" expanded="true" signature="1250:1455" ph="/.../" />
+                    <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
                   </folding>
                 </state>
               </provider>
@@ -93,7 +94,7 @@
           <file leaf-file-name="bishkekplaces.csv" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bishkekplaces.csv">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-680">
+                <state relative-caret-position="400">
                   <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
                   <folding />
                 </state>
@@ -103,17 +104,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="service.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/service/service.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="605">
-                  <caret line="197" column="41" lean-forward="true" selection-start-line="197" selection-start-column="41" selection-end-line="197" selection-end-column="41" />
+                <state relative-caret-position="381">
+                  <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
                   <folding>
                     <element signature="e#17#231#0" expanded="true" />
-                    <marker date="1518419459502" expanded="true" signature="1002:1015" ph="/.../" />
-                    <marker date="1518419459502" expanded="true" signature="1232:1455" ph="..." />
-                    <marker date="1518419459502" expanded="true" signature="1250:1455" ph="/.../" />
+                    <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
                   </folding>
                 </state>
               </provider>
@@ -152,8 +151,8 @@
         <option value="$PROJECT_DIR$/config/config.go" />
         <option value="$PROJECT_DIR$/bishkekplaces.csv" />
         <option value="$PROJECT_DIR$/customFields/customFields.go" />
-        <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/service/runner.go" />
+        <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/service/service.go" />
       </list>
     </option>
@@ -233,7 +232,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testim/main.go" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
@@ -287,18 +286,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="-4" width="1922" height="1085" extended-state="6" />
+    <frame x="1828" y="-4" width="1922" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15528281" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15688367" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.49791667" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.313089" sideWeight="0.50533617" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19685864" sideWeight="0.50533617" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5053192" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33821988" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" x="2455" y="329" width="850" height="419" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33723405" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" x="2455" y="329" width="850" height="419" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19685864" sideWeight="0.49466383" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26645434" sideWeight="0.49466383" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -306,6 +304,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5053192" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -320,6 +319,55 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/service/runner.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#17#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#14#139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/service.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="10" />
+          <folding>
+            <element signature="e#17#231#0" expanded="true" />
+            <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bishkekplaces.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -372,9 +420,7 @@
           <caret line="127" column="21" lean-forward="true" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
           <folding>
             <element signature="e#17#231#0" expanded="true" />
-            <marker date="1518419459502" expanded="true" signature="1002:1015" ph="/.../" />
-            <marker date="1518419459502" expanded="true" signature="1232:1455" ph="..." />
-            <marker date="1518419459502" expanded="true" signature="1250:1455" ph="/.../" />
+            <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -415,9 +461,7 @@
           <caret line="139" column="0" lean-forward="true" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
             <element signature="e#17#231#0" expanded="true" />
-            <marker date="1518419459502" expanded="true" signature="1002:1015" ph="/.../" />
-            <marker date="1518419459502" expanded="true" signature="1232:1455" ph="..." />
-            <marker date="1518419459502" expanded="true" signature="1250:1455" ph="/.../" />
+            <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -466,9 +510,7 @@
           <caret line="98" column="30" lean-forward="false" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
           <folding>
             <element signature="e#17#231#0" expanded="true" />
-            <marker date="1518419459502" expanded="true" signature="1002:1015" ph="/.../" />
-            <marker date="1518419459502" expanded="true" signature="1232:1455" ph="..." />
-            <marker date="1518419459502" expanded="true" signature="1250:1455" ph="/.../" />
+            <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -517,9 +559,7 @@
           <caret line="98" column="30" lean-forward="false" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
           <folding>
             <element signature="e#17#231#0" expanded="true" />
-            <marker date="1518419459502" expanded="true" signature="1002:1015" ph="/.../" />
-            <marker date="1518419459502" expanded="true" signature="1232:1455" ph="..." />
-            <marker date="1518419459502" expanded="true" signature="1250:1455" ph="/.../" />
+            <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -540,9 +580,7 @@
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#17#231#0" expanded="true" />
-            <marker date="1518419459502" expanded="true" signature="1002:1015" ph="/.../" />
-            <marker date="1518419459502" expanded="true" signature="1232:1455" ph="..." />
-            <marker date="1518419459502" expanded="true" signature="1250:1455" ph="/.../" />
+            <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
           </folding>
         </state>
       </provider>
@@ -557,13 +595,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.txt" />
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -584,13 +616,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.txt" />
     <entry file="file://$PROJECT_DIR$/service/run.go" />
     <entry file="file:///usr/local/go/src/os/exec.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -604,45 +630,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bishkekplaces.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
+        <state relative-caret-position="400">
           <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/customFields/customFields.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/customFields/customFields.go" />
     <entry file="file://$PROJECT_DIR$/../testim/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="67" column="46" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6074" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="6074" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="120">
           <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding>
             <element signature="e#14#139#0" expanded="true" />
@@ -660,7 +669,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/config.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="100">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#16#63#0" expanded="true" />
@@ -668,33 +677,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/runner.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="880">
+          <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
           <folding>
             <element signature="e#17#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6074" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="6074" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/service.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="197" column="41" lean-forward="true" selection-start-line="197" selection-start-column="41" selection-end-line="197" selection-end-column="41" />
+        <state relative-caret-position="381">
+          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
           <folding>
             <element signature="e#17#231#0" expanded="true" />
-            <marker date="1518419459502" expanded="true" signature="1002:1015" ph="/.../" />
-            <marker date="1518419459502" expanded="true" signature="1232:1455" ph="..." />
-            <marker date="1518419459502" expanded="true" signature="1250:1455" ph="/.../" />
+            <marker date="1518428377396" expanded="true" signature="1002:1015" ph="/.../" />
           </folding>
         </state>
       </provider>
