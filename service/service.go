@@ -202,7 +202,7 @@ func generateARecord() []byte {
 	data["duration"] = strconv.Itoa(rand.Intn(300)) + " s"
 	data["phone_model"] = models[rand.Intn(len(models))]
 
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 200; i++ {
 		num := rand.Int63()
 		data["field"+string(i)] = num
 	}
