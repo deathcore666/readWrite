@@ -113,8 +113,16 @@ func readFile(dataStream chan []byte) {
 		file.Seek(0, 0)
 		fileScanner := bufio.NewScanner(file)
 		for fileScanner.Scan() {
-			dataStream <- fileScanner.Bytes()
+			dataStream <- []byte(fileScanner.Text())
+			//checkMesg(fileScanner.Bytes())
+			//log.Println(fileScanner.Text())
 		}
+	}
+}
+
+func checkMesg(msg []byte){
+	if !json.Valid(msg) {
+		log.Println("SHIET")
 	}
 }
 
