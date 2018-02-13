@@ -47,8 +47,7 @@ func createTask() func() {
 
 		wg.Add(1)
 
-
-		go readFile(messages, &wg)
+		go readFile(messages)
 		go writeToKafka(messages, interrupt, &wg)
 
 		wg.Wait()

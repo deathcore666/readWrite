@@ -102,21 +102,20 @@ ProducerLoop:
 
 }
 
-func readFile(dataStream chan []byte, wg *sync.WaitGroup) {
+func readFile(dataStream chan []byte) {
 	file, err := os.Open("test.txt")
 	if err != nil {
 		log.Println(err)
 	}
 
-	fileScanner := bufio.NewScanner(file)
-
-	for fileScanner.Scan() {
-		dataStream <- []byte(fileScanner.Text())
+	defer file.Close()
+	for {
+		file.Seek(0, 0)
+		fileScanner := bufio.NewScanner(file)
+		for fileScanner.Scan() {
+			dataStream <- fileScanner.Bytes()
+		}
 	}
-	file.Close()
-	readFile(dataStream, wg)
-	return
-
 }
 
 func WriteRandomDataToFile() {
@@ -204,7 +203,7 @@ func generateARecord() []byte {
 	data["duration"] = strconv.Itoa(rand.Intn(300)) + " s"
 	data["phone_model"] = models[rand.Intn(len(models))]
 
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 200; i++ {
 		num := rand.Int63()
 		data["field"+string(i)] = num
 	}
